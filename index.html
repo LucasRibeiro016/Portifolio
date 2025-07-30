@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="Menu-link">Inicio</a></li>
+            <li><a href="#sobre" class="Menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="Menu-link">projetos</a></li>
+            <li><a href="#contatos" class="Menu-link">contatos</a></li>
+        </ul>
+    </nav>
+
+    <main class="cabecalho" id="inicio">
+        <img class="foto-prefil" src="img/perfill.jpg" alt="foto-perfil">
+        <h1>Lucas Ribeiro</h1>
+        <p class="Front-End">desenvolvedor Front-End</p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-title">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">Sou um desenvolvedor Front-End apaixonado por criar Projetos</p>
+    </section>
+
+    <section id="projetos" class="projetos">
+
+        <h2 class="projetos-title">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="cards">
+                <img src="img/cardapio.png" alt="cardapio" class="projetos-imagem">
+                <div class="text-projetos">
+                    <h3 class="info-projetos">Cardapio</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sint.
+                        Ut at, explicabo aspernatur provident nisi eum, ex ducimus molestiae eligendi nihil recusandae
+                        dolores fugiat sequi commodi maxime quidem amet?</p>
+                </div>
+            </div>
+
+            <div class="cards">
+                <img src="img/portfolio.png" alt="portfolio" class="projetos-imagem">
+                <div class="text-projetos">
+                    <h3>portfolio</h3>
+                    <p class="paragrafo-projetos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, sint.
+                        Ut at, explicabo aspernatur provident nisi eum, ex ducimus molestiae eligendi nihil recusandae
+                        dolores fugiat sequi commodi maxime quidem amet?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-title">Entre em contato</h2>
+        <form class="contatos-form" id="form" onsubmit="enviarwhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form"="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar WhatsApp</button>
+        </form>
+    </section>
+    <script>
+        function enviarwhats(event) {
+
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5561996810631';
+
+            const text = `Ola! Me chamo ${nome},${mensagem}`;
+            const formatar = encodeURIComponent(text)
+
+            const url = `https://whatsa.me/${telefone}/?t=${formatar}`
+
+            window.open(url, '_blank')
+        }
+    </script>
+
+
+</body>
+
+</html>
